@@ -11,7 +11,7 @@ CROP_W="${WIDTH:=1024}"
 CROP_H="${WIDTH:=500}"
 
 send-notify() {
-    $WORKDIR/notify-send.sh
+    $WORKDIR/send-notify.sh
 }
 
 createLogs() {
@@ -51,6 +51,7 @@ if [[ -f $WORKDIR/staging.png ]]; then
     if diff $WORKDIR/staging.png $WORKDIR/output.png ; then
         # Output is the same as staging
         echo "[INFO] Output snapshot is the same as the staging one, updating webpage reference snapshot and notifying..."
+
         send-notify
         if [[ LOGS -eq 1 ]]; then
            createLogs
