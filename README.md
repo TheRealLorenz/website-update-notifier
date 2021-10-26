@@ -14,9 +14,9 @@ Clone and prepare the repo:
     cd website-update-notifier
     chmod +x get-website.sh send-notify.sh
 
-At this point there are 3 methods for passing the url and che area to crop the screenshot
+At this point there are 3 methods for passing the url and the area to crop the screenshot
 
-### Execute the setup
+### Execute the setup [WIP]
 
 Pass the flag '--setup' to the 'get-website.sh' script:
 
@@ -24,7 +24,7 @@ Pass the flag '--setup' to the 'get-website.sh' script:
 
 This will create a 'get-website.conf' in the current directory containing all the required metadatas.
 
-### Pass the arguments via environmental variables
+### Pass the arguments via environmental variables [WIP]
 
 Use the environmental variables for passing arguments to the script:
 
@@ -40,7 +40,7 @@ You can execute this script periodically with the help of systemd timers. Here y
 
 !!! Path
 
-#### Example systemd timer
+#### Example systemd unit timer
 
     [Unit]
     Description=Exec get website every 15 min
@@ -52,7 +52,7 @@ You can execute this script periodically with the help of systemd timers. Here y
     [Install]
     WantedBy=default.target
 
-### Example systemd service
+### Example systemd unit service
 
     [Unit]
     Description=Get website service
